@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
 .App {
   text-align: center;
 }
@@ -13,26 +15,102 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
+
+/* Navbar Styling */
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: #517a62;
+  padding: 30px 20px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.navbar .logo {
+  position: absolute; /* Position logo absolutely */
+  left: 20px; /* Offset from left edge */
+  display: flex;
+  align-items: center;
+}
+
+.navbar .logo img {
+  height: 50px; /* Adjust the logo size */
+  width: auto;
+}
+
+.navbar nav {
+  width: 100%; /* Take full width */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center; 
+  padding-right: 20px;
+
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  gap: 30px;
+}
+
+.navbar ul li {
+  margin: 0; /* Adds space between links */
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem; /* Adjust font size */
+}
+
+.navbar ul li a:hover {
+  text-decoration: underline;
+}
+
+.section {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.home {
+  background-color: #f0f8ff;
+}
+
+.about {
+  background-color: #e6f7f7;
+}
+
+.services {
+  background-color: #ccf2f2;
+}
+
+.contact {
+  background-color: #b3ebeb;
+}
+
+.footer {
+  background-color: #008080;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+
+
