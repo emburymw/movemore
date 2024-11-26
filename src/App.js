@@ -5,6 +5,22 @@ import logo from "./images/Mountains.png";
 import natasha from "./images/Nat.jpg";
 
 const App = () => {
+
+  const services = [
+    {
+      title: "Older Adult Physiotherapy",
+      description: "As we age, maintaining mobility, strength, balance, and independence becomes essential for daily living. Our geriatric physiotherapy services are designed to help older adults regain and preserve their physical function."
+    },
+    {
+      title: "Sports Injury Rehab",
+      description: "Whether you're a weekend warrior or an avid athlete, injuries can sideline your performance. Our sports physiotherapy services focus on helping you recover from injuries and prevent future ones."
+    },
+    {
+      title: "General Aches & Pains",
+      description: "We provide comprehensive treatment for musculoskeletal pain, which can affect any area of the body. Our services are designed to reduce pain, restore function, and improve overall quality of life."
+    }
+  ];
+
   return (
     <div>
       <header className="navbar">
@@ -62,7 +78,7 @@ const App = () => {
         <div className="aboutContainer">
           <img src={natasha} alt="Natasha" className="aboutImage" />
           <div className="aboutText">
-            <h2>About</h2>
+            <h1>About</h1>
             <h3>Meet Natasha</h3>
             <p>
               Hello! I'm Natasha, a dedicated physiotherapist with a passion for helping individuals regain their mobility and
@@ -89,12 +105,19 @@ const App = () => {
       </section>
 
       <section id="services" className="section services">
-        <h2>Services</h2>
-
+        <h1>Services</h1>
+        <div className="services-container">
+          {services.map((service, index) => (
+            <div key={index} className="service-box">
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
       <section id="fees" className="section fees">
-        <h2>Fees</h2>
+        <h1>Fees</h1>
         <p>Here's an overview of our pricing for services offered:</p>
         <br />
         <table>
@@ -117,17 +140,17 @@ const App = () => {
             <tr>
               <td>Standard Session</td>
               <td>30 minutes</td>
-              <td>$95</td>
+              <td>$100</td>
             </tr>
             <tr>
               <td>Standard Session</td>
               <td>45 minutes</td>
-              <td>$115</td>
+              <td>$120</td>
             </tr>
             <tr>
               <td>Standard Session</td>
               <td>60 minutes</td>
-              <td>$135</td>
+              <td>$140</td>
             </tr>
 
           </thead>
@@ -135,14 +158,14 @@ const App = () => {
       </section>
 
       <section id="contact" className="section contact">
-        <h2>Contact Us</h2>
+        <h1>Contact Us</h1>
         <p>Phone: (780) 265-2536</p>
-        <p>Email: info@mobilephysio.ca</p>
-        <p>Service Areas: Canmore, Banff, & Cochrane</p>
+        <p>Email: info@movemorecanmore.ca</p>
+        <p>Service Areas: Canmore, Banff, & surrounding areas</p>
       </section>
 
       <footer className="footer">
-        <p>&copy; 2024 MoveMore Canmore. All Rights Reserved.</p>
+        <p>&copy; 2024 Movemore Canmore. All Rights Reserved.</p>
       </footer>
     </div>
   );
