@@ -2,13 +2,14 @@ import React from "react";
 import { Link } from "react-scroll";
 import "./App.css";
 import logo from "./images/Mountains.png";
+import natasha from "./images/Nat.jpg";
 
 const App = () => {
   return (
     <div>
       <header className="navbar">
         <nav>
-        <div className="logo">
+          <div className="logo">
             <img
               src={logo} alt="Mobile Physio Clinic Logo"
             />
@@ -44,48 +45,58 @@ const App = () => {
       </header>
 
       <section id="home" className="section home">
-        <h1>Welcome to MoreMove Canmore Mobile Physiotherapy</h1>
-        <p>At Move More Canmore, we believe that everyone deserves the opportunity to live an active,
-fulfilling life. We provide personalized physiotherapy services in the comfort of your home. Move More, Do
-More, Canmore.</p>
+        <div className="home-content">
+          <h1>Movemore Canmore Physiotherapy</h1>
+          <p>Physiotherapy services in the comfort of your home.</p>
+          <br />
+          <p>Move More, Do More, Canmore.</p>
+
+          <br />
+          <Link to="contact" smooth={true} duration={500}>
+            Book Now
+          </Link>
+        </div>
       </section>
 
       <section id="about" className="section about">
-        <h2>About</h2>
-        <h3>Meet Natasha</h3>
-        <p>
-        Hello! I'm Natasha, a dedicated physiotherapist with a passion for helping individuals regain their mobility and
-        return to the activities they love. I completed my undergraduate studies in Alberta and earned my Master's in
-        Physiotherapy from the University of Ottawa. I have been practicing since 2017.
-        </p>
-        <p>
-        In 2022, I made the beautiful town of Canmore my home. I truly enjoy the active lifestyle this incredible area
-        offers, and I believe in promoting the same enthusiasm for movement and health in my clients.
-        </p>
-        <p>
-        In my free time, you'll often find me trail running, skiing, or rock climbing in the stunning mountains
-        surrounding Canmore. I understand the importance of staying active and the challenges that come with
-        recovery, and I'm here to support you every step of the way. 
-        </p>
-        <p>
-        I offer services in both French and English!
-        </p>
+        <div className="aboutContainer">
+          <img src={natasha} alt="Natasha" className="aboutImage" />
+          <div className="aboutText">
+            <h2>About</h2>
+            <h3>Meet Natasha</h3>
+            <p>
+              Hello! I'm Natasha, a dedicated physiotherapist with a passion for helping individuals regain their mobility and
+              return to the activities they love. I completed my undergraduate studies in Alberta and earned my Master's in
+              Physiotherapy from the University of Ottawa. I have been practicing since 2017.
+            </p>
+
+            <p>
+              In 2022, I made the beautiful town of Canmore my home. I truly enjoy the active lifestyle this incredible area
+              offers, and I believe in promoting the same enthusiasm for movement and health in my clients.
+            </p>
+
+            <p>
+              In my free time, you'll often find me trail running, skiing, or rock climbing in the stunning mountains
+              surrounding Canmore. I understand the importance of staying active and the challenges that come with
+              recovery, and I'm here to support you every step of the way.
+            </p>
+
+            <p>
+              I offer services in both French and English!
+            </p>
+          </div>
+        </div>
       </section>
 
       <section id="services" className="section services">
-        <h2>Services and Pricing</h2>
-        <ul>
-          <li>Physical Therapy</li>
-          <li>Rehabilitation</li>
-          <li>Post-Injury Care</li>
-          <li>Sports Therapy</li>
-          <li>Dry Needling</li>
-        </ul>
+        <h2>Services</h2>
+
       </section>
 
       <section id="fees" className="section fees">
         <h2>Fees</h2>
         <p>Here's an overview of our pricing for services offered:</p>
+        <br />
         <table>
           <thead>
             <tr>
