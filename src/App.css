@@ -15,6 +15,12 @@
   }
 }
 
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -41,6 +47,7 @@ p {
   z-index: 1000;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .navbar .logo {
@@ -50,8 +57,12 @@ p {
   align-items: center;
 }
 
+.navbar .logo:hover {
+  cursor: pointer;
+}
+
 .navbar .logo img {
-  height: 50px; 
+  height: 75px; 
   width: auto;
 }
 
@@ -64,31 +75,57 @@ p {
 
 }
 
-.navbar ul {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-  align-items: center;
-  gap: 30px;
+.dropdown {
+  position: relative;
+  display: inline-block;
+  z-index: 1001;
 }
 
-.navbar ul li {
-  margin: 0; 
-}
-
-.navbar ul li a {
-  color: rgb(0, 0, 0);
-  text-decoration: none;
+.dropbtn {
+  width: 30px;
+  height: 30px;
   cursor: pointer;
-  font-weight: bold;
-  font-family: 'Courier New', Courier, monospace;
-
-  font-size: 1.2rem; 
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.navbar ul li a:hover {
-  text-decoration: underline;
+.dropbtn img {
+  width: 100%;
+  height: auto;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.dropdown-content.show {
+  display: block;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #dbdbdbfe; 
+}
+
+.logo {
+  transition: none; /* Disable transition effects */
 }
 
 .section {
@@ -102,11 +139,11 @@ p {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  min-height: 71vh;
-  position: relative;
+  height: 72vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .home::before {
@@ -128,6 +165,9 @@ p {
   padding: 0 20px; 
   position: relative; 
   z-index: 2;
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
+  animation-delay: 0.5s;
 }
 
 .home-content h1 {
@@ -144,10 +184,19 @@ p {
   cursor: pointer;
   display: inline-block;
   font-size: x-large;
+  padding: 12px 30px;
+  border: 2px solid #ffffff;
+  border-radius: 4px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .home-content a:hover {
-  text-decoration: underline;
+  background-color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  transform: translateY(-2px);
 }
 
 .home > * {
@@ -156,7 +205,8 @@ p {
 }
 
 .about {
-  background-color: #c1d0b5;
+  /*background-color: #c1d0b5; */
+  background-color: #a2bba7;
 }
 
 .aboutContainer {
@@ -169,19 +219,71 @@ p {
   padding: 0 20px;
 }
 
+@media (max-width: 768px) {
+  .aboutContainer {
+    flex-direction: column; 
+    align-items: center; 
+    padding: 0;
+    width: 100%;
+  }
+
+  .aboutImage {
+    width: 100%; 
+    max-width: 300px; 
+    margin-bottom: 20px;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .aboutText {
+    max-width: none;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .aboutText p {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 2px 0;
+    max-width: none;
+  }
+
+  .aboutText h1,
+  .aboutText h2 {
+    text-align: center;
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
 .aboutImage {
-  width: 400px;
+  width: 550px;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-top: 7rem;
+  margin-top: 8rem;
   align-self: flex-start;
+  transition: 1s ease;
+}
+
+.aboutImage:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  transition: 1s ease;
 }
 
 .aboutText {
-  margin-left: 0;
+  width: 50%;
   text-align: left;
-  max-width: 50%;
 }
 
 .aboutText h1 {
@@ -189,19 +291,21 @@ p {
   font-family: 'Courier New', Courier, monospace;
 }
 
-.aboutText h3 {
+.aboutText h2 {
   margin: 0;
   padding: 0;
   margin-bottom: 1rem;
   line-height: 1.5; 
   font-family: 'Courier New', Courier, monospace;
+  font-weight: light;
 }
 
 .aboutText p {
   margin: 0; 
-  padding: 0; 
+  padding: 5px; 
   line-height: 1.5;
   font-family: 'Courier New', Courier, monospace;
+
 }
 
 .aboutText p:not(:last-child) {
@@ -209,7 +313,7 @@ p {
 }
 
 .services {
-  background-color: #dce3c7;
+  background-color: #ffffff;
   font-family: 'Courier New', Courier, monospace;
   font-weight: lighter;
 }
@@ -229,21 +333,46 @@ p {
   perspective: 1000px;
 }
 
+@media (max-width: 768px) {
+  .services-container {
+    grid-template-columns: 1fr; 
+    width: 85%;
+    gap: 2rem;
+    margin: 0 auto;
+  }
+
+  .service-box {
+    padding: 1.5rem;
+    margin: 0 auto;
+    max-width: 400px;
+  }
+}
+
 .service-box {
-  background: #f7f4e9;
+  background: #a2bba7;
   padding: 2rem;
   border-radius: 8px;
   text-align: center;
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: opacity 0.6s ease, transform 0.4s ease;
+  transform: translateY(20px);
   transform-origin: center;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  will-change: transform;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.service-box.fade-in {
+  opacity: 1;
+  animation: fadeIn 0.4s forwards;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .service-box:hover {
   transform: scale(1.15);
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
   z-index: 1;
+ 
 }
 
 .service-box h3 {
@@ -260,12 +389,43 @@ p {
 }
 
 .fees {
-  background-color: #dbead2;
+  position: relative;
+  background-image: url('./images/ThreeSisters.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   font-family: 'Courier New', Courier, monospace;
+  padding: 100px 0;
+  box-sizing: border-box;
+}
+
+.fees::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.15); 
+  z-index: 1; 
+}
+
+.fees h1, .fees p, .fees table {
+  position: relative;
+  z-index: 2; 
 }
 
 .fees h1 {
   font-weight: lighter;
+  color: #fffff8;
+  text-shadow: 1px 1px 0px black, -1px -1px 0px black, 1px -1px 0px black, -1px 1px 0px black;
+}
+
+.fees p {
+  color: #fffff8;
+  text-shadow: #000000;
+  text-shadow: 1px 1px 0px black, -1px -1px 0px black, 1px -1px 0px black, -1px 1px 0px black;
 }
 
 .fees table {
@@ -278,6 +438,23 @@ p {
   background-color: #f7f4e9;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+  .fees table {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 12px;
+  }
+
+  .fees td, .fees th {
+    padding: 0.75rem 0.25rem;
+    text-align: center;
+  }
+
+  .fees td:first-child {
+    text-align: left;
+  }
 }
 
 .fees td, .fees th {
@@ -296,16 +473,144 @@ p {
 }
 
 .fees tr:hover {
-  background-color: #f5f5f5;
+  background-color: #e9e6e0;
+  transition: background-color 0.3s ease; 
 }
 
 .contact {
   background-color: #e9e6e0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
   font-family: 'Courier New', Courier, monospace;
+}
+
+.contactContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .contactContainer {
+    flex-direction: column;
+    gap: 20px;
+    width: 95%;
+    padding: 0;
+  }
+
+  .contactMap {
+    width: 100%;
+    height: 400px;
+    margin: 10px 0;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .contactLeftSide {
+    max-width: 90%;
+    width: 100%;
+  }
+
+  .contactForm {
+    width: 100%;
+    padding: 15px;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .formGroup {
+    padding: 0 10px;
+  }
+}
+
+.contactInfo {
+  flex: 0 1 auto;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height:  unset;
+  padding-top: 20px;
+}
+
+.contactForm {
+  flex: 0 1 auto;
+  width: 100%;
+  max-width: 500px;
+  margin: 0;
+  padding: 20px;
+  background-color: #a2bba7;
+  border-radius: 8px;
+}
+
+.formGroup {
+  margin-bottom: 15px;
+  padding: 0 20px;
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #ffffff;
+  transition: border-color 0.3s ease;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: #9bbc9d; 
+  box-shadow: 0 0 5px rgba(155, 188, 157, 0.3);
+}
+
+.contactLeftSide {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  width: 100%;
+  max-width: 500px; 
+}
+
+.submitButton {
+  background-color: #658971;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+  background-color: #8aab8c;
+  transform: translateY(-1px);
+}
+
+.contactMap {
+  flex: 1;
+  height: 600px;
+  width: 600px;
+  border-radius: 8px;
 }
 
 .contact h1 {
   font-weight: lighter;
+}
+
+.contact p {
+  margin: 10px 0;
 }
 
 
@@ -314,8 +619,5 @@ p {
   color: rgb(0, 0, 0);
   text-align: center;
   padding: 10px 0;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Courier New', monospace;
 }
-
-
-
