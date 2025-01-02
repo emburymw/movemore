@@ -90,7 +90,7 @@ const Contact = () => {
           </div>
         </div>
         <div className="contactMap">
-          <LoadScript googleMapsApiKey="AIzaSyBu-f2hjaVV5jQZbKZBOop_nQfH0BGpBH0">
+          <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
             <GoogleMap
               mapContainerStyle={mapStyles}
               zoom={10.7}
