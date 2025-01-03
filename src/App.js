@@ -7,6 +7,8 @@ import Services from './Components/Services';
 import Fees from './Components/Fees';
 import Contact from './Components/Contact';
 import Footer from './Components/Footer';
+import { init } from '@emailjs/browser';
+init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
 
 const App = () => {
   return (
