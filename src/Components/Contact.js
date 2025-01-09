@@ -45,7 +45,7 @@ const Contact = () => {
             {
                 stylers: [
                     { saturation: -90 },
-                    { lightness: 10 }
+                    { lightness: 25 }
                 ]
             }
         ],
@@ -60,11 +60,11 @@ const Contact = () => {
 
     return (
         <section id="contact" className="section contact">
-            <h1>Contact Me</h1>
+            <h1><b>Contact Me</b></h1>
             <div className="contactContainer">
                 <div className="contactLeftSide">
                     <div className="contactInfo">
-                        <p><b>Service Areas:</b> Canmore, Banff, & surrounding areas</p>
+                        <p>Services are provided in Canmore and surrounding areas.</p>
                         <p><b>Phone:</b> (780) 265-2536</p>
                         <p><b>Email:</b> info@movemorecanmore.ca</p>
                     </div>
@@ -120,7 +120,7 @@ const Contact = () => {
                     <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
                         <GoogleMap
                             mapContainerStyle={mapStyles}
-                            zoom={10.5}
+                            zoom={10}
                             center={center}
                             options={mapOptions}
                         >
