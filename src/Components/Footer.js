@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
   return (
     <footer className="footer">
       <div className="footer-content">
@@ -11,7 +12,7 @@ const Footer = () => {
           <a href="#fees">Fees</a>
           <a href="#contact">Contact</a>
         </div>
-        <p>&copy; 2024 Move More Canmore. All Rights Reserved.</p>
+        <p>&copy; {currentYear} Move More Canmore. All Rights Reserved.</p>
       </div>
     </footer>
   );

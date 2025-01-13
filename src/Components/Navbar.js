@@ -34,14 +34,14 @@ const Navbar = () => {
           ref={dropdownRef}
         >
           <button className="dropbtn" onClick={toggleDropdown}>
-            <img src={dropdown} alt="Menu" className="dropbtn" />
+            <img src={dropdown} alt="Menu" className="dropdown-icon" />
           </button>
           <div className={`dropdown-content ${dropdownOpen ? 'show' : ''}`}>
-            <Link to="home" smooth={true} duration={500} offset={-80}>Home</Link>
-            <Link to="about" smooth={true} duration={500} offset={-80}>About</Link>
-            <Link to="services" smooth={true} duration={500} offset={-80}>Services</Link>
-            <Link to="fees" smooth={true} duration={500} offset={-80}>Fees</Link>
-            <Link to="contact" smooth={true} duration={500} offset={-80}>Contact</Link>
+            <Link to="home" smooth={true} duration={500} offset={-70}>Home</Link>
+            <Link to="about" smooth={true} duration={500} offset={-70}>About</Link>
+            <Link to="services" smooth={true} duration={500} offset={-90}>Services</Link>
+            <Link to="fees" smooth={true} duration={500} offset={-70}>Fees</Link>
+            <Link to="contact" smooth={true} duration={500} offset={-70}>Contact</Link>
           </div>
         </div>
       </nav>

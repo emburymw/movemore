@@ -4,8 +4,7 @@ const Fees = () => {
     return (
         <section id="fees" className="section fees">
             <h1>Fees</h1>
-            <p>Please call or email if you have any questions or to book a free consultation. We also offer virtual
-                physiotherapy.</p>
+            <p>Please call or email if you have any questions or to book a free consultation. Virtual physiotherapy is also available.</p>
             <br />
             <table>
                 <thead>
@@ -20,17 +19,17 @@ const Fees = () => {
                         <td>$140</td>
                     </tr>
                     <tr>
-                        <td>Standard Session</td>
+                        <td>Follow-Up Session</td>
                         <td>30 minutes</td>
                         <td>$100</td>
                     </tr>
                     <tr>
-                        <td>Standard Session</td>
+                        <td>Follow-Up Session</td>
                         <td>45 minutes</td>
                         <td>$120</td>
                     </tr>
                     <tr>
-                        <td>Standard Session</td>
+                        <td>Follow-Up Session</td>
                         <td>60 minutes</td>
                         <td>$140</td>
                     </tr>
