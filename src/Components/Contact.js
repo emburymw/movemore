@@ -1,11 +1,13 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useContext } from 'react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import emailjs from '@emailjs/browser';
+import { LanguageContext } from '../context/LanguageContext';
 
 const Contact = () => {
     const form = useRef();
     const [submitStatus, setSubmitStatus] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const { translations } = useContext(LanguageContext);
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -60,13 +62,13 @@ const Contact = () => {
 
     return (
         <section id="contact" className="section contact">
-            <h1><b>Contact Me</b></h1>
+            <h1><b>{translations.contact.title}</b></h1>
             <div className="contactContainer">
                 <div className="contactLeftSide">
                     <div className="contactInfo">
-                        <p>Services are provided in Canmore and surrounding areas.</p>
-                        <p><b>Phone:</b> (780) 265-2536</p>
-                        <p><b>Email:</b> info@movemorecanmore.ca</p>
+                        <p>{translations.contact.location}</p>
+                        <p><b>{translations.contact.labels.phone}:</b> {translations.contact.phone}</p>
+                        <p><b>{translations.contact.labels.email}:</b> {translations.contact.email}</p>
                     </div>
                     <div className="contactForm">
                         <form ref={form} onSubmit={sendEmail}>
@@ -74,7 +76,7 @@ const Contact = () => {
                                 <input 
                                     type="text" 
                                     name="user_name"
-                                    placeholder="Your Name" 
+                                    placeholder={translations.contact.form.namePlaceholder}
                                     required 
                                 />
                             </div>
@@ -82,7 +84,7 @@ const Contact = () => {
                                 <input 
                                     type="email" 
                                     name="user_email"
-                                    placeholder="Your Email" 
+                                    placeholder={translations.contact.form.emailPlaceholder}
                                     required 
                                 />
                             </div>
@@ -90,13 +92,13 @@ const Contact = () => {
                                 <input 
                                     type="tel" 
                                     name="user_phone"
-                                    placeholder="Your Phone (optional)" 
+                                    placeholder={translations.contact.form.phonePlaceholder}
                                 />
                             </div>
                             <div className="formGroup">
                                 <textarea 
                                     name="message"
-                                    placeholder="Your Message" 
+                                    placeholder={translations.contact.form.messagePlaceholder}
                                     rows="5" 
                                     required
                                 ></textarea>
@@ -111,7 +113,7 @@ const Contact = () => {
                                 className="submitButton"
                                 disabled={isSubmitting}
                             >
-                                {isSubmitting ? 'Sending...' : 'Send Message'}
+                                {isSubmitting ? translations.contact.form.submitting : translations.contact.form.submitButton}
                             </button>
                         </form>
                     </div>

@@ -1,38 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { LanguageContext } from '../context/LanguageContext';
 
 const Fees = () => {
+    const { translations } = useContext(LanguageContext);
+    
     return (
         <section id="fees" className="section fees">
-            <h1>Fees</h1>
-            <p>Please call or email if you have any questions or to book a free consultation. Virtual physiotherapy is also available.</p>
+            <h1>{translations.fees.title}</h1>
+            <p>{translations.fees.introduction}</p>
             <br />
             <table>
                 <thead>
                     <tr>
-                        <th>Service</th>
-                        <th>Duration</th>
-                        <th>Cost</th>
+                        <th>{translations.fees.tableHeaders.service}</th>
+                        <th>{translations.fees.tableHeaders.duration}</th>
+                        <th>{translations.fees.tableHeaders.cost}</th>
                     </tr>
-                    <tr>
-                        <td>Initial Assessment</td>
-                        <td>1 hour</td>
-                        <td>$140</td>
-                    </tr>
-                    <tr>
-                        <td>Follow-Up Session</td>
-                        <td>30 minutes</td>
-                        <td>$100</td>
-                    </tr>
-                    <tr>
-                        <td>Follow-Up Session</td>
-                        <td>45 minutes</td>
-                        <td>$120</td>
-                    </tr>
-                    <tr>
-                        <td>Follow-Up Session</td>
-                        <td>60 minutes</td>
-                        <td>$140</td>
-                    </tr>
+                    {translations.fees.services.map((item, index) => (
+                        <tr key={index}>
+                            <td>{item.service}</td>
+                            <td>{item.duration}</td>
+                            <td>{item.cost}</td>
+                        </tr>
+                    ))}
                 </thead>
             </table>
         </section>

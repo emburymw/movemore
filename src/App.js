@@ -9,6 +9,8 @@ import Contact from './Components/Contact';
 import Footer from './Components/Footer';
 import { init } from '@emailjs/browser';
 import ReactGA from 'react-ga';
+import { LanguageProvider } from './context/LanguageContext';
+
 init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
 
 const App = () => {
@@ -19,15 +21,17 @@ const App = () => {
   }, []);
 
   return (
-    <div>
-      <Navbar />
-      <Home />
-      <About />
-      <Services />
-      <Fees />
-      <Contact />
-      <Footer />
-    </div>
+    <LanguageProvider>
+      <div>
+        <Navbar />
+        <Home />
+        <About />
+        <Services />
+        <Fees />
+        <Contact />
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
 };
 

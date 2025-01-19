@@ -1,18 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from "react-scroll";
 import flowersBiege from '../images/logoBiege.png';
+import { LanguageContext } from '../context/LanguageContext';
 
 const Home = () => {
+  const { translations } = useContext(LanguageContext);
+  
   return (
     <section id="home" className="section home">
       <div className="home-content">
         <img src={flowersBiege} alt="Movemore Canmore Physiotherapy" className="home-logo" />
-        <p>Physiotherapy services in the comfort of your home.</p>
+        <p>{translations.home.tagline}</p>
         <br />
-        <p>Move More, Do More, Canmore.</p>
+        <p>{translations.home.motto}</p>
         <br />
         <Link to="contact" smooth={true} duration={500}>
-          Book Now
+          {translations.home.bookNow}
         </Link>
       </div>
     </section>

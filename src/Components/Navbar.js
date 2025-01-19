@@ -1,11 +1,13 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useContext } from 'react';
 import { Link } from "react-scroll";
 import logo from "../images/fire-weed.png";
 import dropdown from "../images/dropdown.png";
+import { LanguageContext } from '../context/LanguageContext';
 
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const { language, setLanguage, translations } = useContext(LanguageContext);
 
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
@@ -19,6 +21,12 @@ const Navbar = () => {
     setDropdownOpen(false);
   };
 
+  const toggleLanguage = () => {
+    setLanguage(language === 'en' ? 'fr' : 'en');
+  };
+
+  const buttonText = language === 'en' ? 'FR' : 'EN';
+
   return (
     <header className="navbar">
       <nav>
@@ -27,21 +35,36 @@ const Navbar = () => {
             <img src={logo} alt="Mobile Physio Clinic Logo" />
           </Link>
         </div>
-        <div 
-          className="dropdown" 
-          onMouseEnter={handleMouseEnter} 
-          onMouseLeave={handleMouseLeave}
-          ref={dropdownRef}
-        >
-          <button className="dropbtn" onClick={toggleDropdown}>
-            <img src={dropdown} alt="Menu" className="dropdown-icon" />
+        <div className="nav-controls">
+          <button 
+            className="language-toggle" 
+            onClick={toggleLanguage}
+            aria-label="Toggle language"
+          >
+            {buttonText}
           </button>
-          <div className={`dropdown-content ${dropdownOpen ? 'show' : ''}`}>
-            <Link to="home" smooth={true} duration={500} offset={-70}>Home</Link>
-            <Link to="about" smooth={true} duration={500} offset={-70}>About</Link>
-            <Link to="services" smooth={true} duration={500} offset={-90}>Services</Link>
-            <Link to="fees" smooth={true} duration={500} offset={-70}>Fees</Link>
-            <Link to="contact" smooth={true} duration={500} offset={-70}>Contact</Link>
+          <div 
+            className="dropdown" 
+            onMouseEnter={handleMouseEnter} 
+            onMouseLeave={handleMouseLeave}
+            ref={dropdownRef}
+          >
+            <button className="dropbtn" onClick={toggleDropdown}>
+              <img src={dropdown} alt="Menu" className="dropdown-icon" />
+            </button>
+            <div className={`dropdown-content ${dropdownOpen ? 'show' : ''}`}>
+              {translations.navbar.menuItems.map((item, index) => (
+                <Link 
+                  key={index}
+                  to={item.toLowerCase()} 
+                  smooth={true} 
+                  duration={500} 
+                  offset={item === 'Services' ? -90 : -70}
+                >
+                  {item}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </nav>
