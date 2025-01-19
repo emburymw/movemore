@@ -148,6 +148,8 @@ img {
 .dropdown-content.show {
   display: block;
   animation: slideIn 0.6s ease forwards;
+  transform: translateY(0);
+  opacity: 1;
 }
 
 @keyframes slideIn {
@@ -183,10 +185,12 @@ img {
 .section {
   padding: 60px 20px;
   text-align: center;
+  content-visibility: auto;
+  contain-intrinsic-size: 700px;
 }
 
 .home {
-  background-image: url('./images/HealyPass.jpg');
+  background-image: none;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -197,6 +201,7 @@ img {
   justify-content: center;
   position: relative;
   margin-top: 0px;
+  transition: background-image 0.3s ease-in;
 
   -webkit-backface-visibility: hidden;
   -webkit-transform: translateZ(0);
@@ -204,6 +209,14 @@ img {
   transform: translateZ(0);
   /* Ensure color space consistency */
   color-scheme: only light;
+}
+
+.home.bg-loaded {
+  background-image: url('./images/HealyPass.jpg');
+}
+
+.home:not(.bg-loaded) {
+  background-color: #f5f5f5;
 }
 
 .home::before {
@@ -430,6 +443,7 @@ img {
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   opacity: 0;
   visibility: hidden;
+  will-change: transform;
 }
 
 .service-box.fade-in {

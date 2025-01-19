@@ -82,9 +82,9 @@ export const fr = {
         phonePlaceholder: "Votre numéro de téléphone (optionnel)",
         messagePlaceholder: "Message",
         submitButton: "Envoyez",
-        submitting: "fr: Sending...",
-        successMessage: "fr: Message sent successfully!",
-        errorMessage: "fr: Failed to send message. Please try again."
+        submitting: "Envoi en cours...",
+        successMessage: "Message envoyé avec succès!",
+        errorMessage: "Échec de l'envoi. Veuillez réessayer."
       }
     },
     navbar: {

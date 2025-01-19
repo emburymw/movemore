@@ -1,8 +1,18 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect, useContext, useMemo } from 'react';
 import { LanguageContext } from '../context/LanguageContext';
 
 const Services = () => {
     const { translations } = useContext(LanguageContext);
+
+    const servicesList = useMemo(() => 
+        translations.services.servicesList.map((service) => (
+            <div key={service.id} className="service-box">
+                <h3>{service.title}</h3>
+                <hr />
+                <p>{service.description}</p>
+            </div>
+        )), [translations.services.servicesList]
+    );
 
     useEffect(() => {
         const servicesContainer = document.querySelector('.services-container');
@@ -37,16 +47,10 @@ const Services = () => {
             <h1>{translations.services.title}</h1>
             <p>{translations.services.introduction}</p>
             <div className="services-container">
-                {translations.services.servicesList.map((service) => (
-                    <div key={service.id} className="service-box">
-                        <h3>{service.title}</h3>
-                        <hr />
-                        <p>{service.description}</p>
-                    </div>
-                ))}
+                {servicesList}
             </div>
         </section>
     );
 };
 
-export default Services; 
+export default React.memo(Services); 

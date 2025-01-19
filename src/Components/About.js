@@ -1,6 +1,9 @@
-import React, { useContext } from 'react';
+import React, { useContext, lazy } from 'react';
 import natasha from "../images/NatPortrait.jpg";
 import { LanguageContext } from '../context/LanguageContext';
+
+// Lazy load images
+const OptimizedImage = lazy(() => import('./OptimizedImage'));
 
 const About = () => {
     const { translations } = useContext(LanguageContext);
@@ -8,7 +11,13 @@ const About = () => {
     return (
         <section id="about" className="section about">
             <div className="aboutContainer">
-                <img src={natasha} alt="Natasha" className="aboutImage" />
+                <OptimizedImage 
+                    src={natasha} 
+                    alt="Natasha" 
+                    className="aboutImage"
+                    width={450}
+                    height={600}
+                />
                 <div className="aboutText">
                     <h1><b>{translations.about.title}</b></h1>
                     <p>{translations.about.paragraph1}</p>
@@ -20,4 +29,4 @@ const About = () => {
     );
 };
 
-export default About; 
+export default React.memo(About); 
