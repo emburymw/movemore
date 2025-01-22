@@ -1,7 +1,10 @@
-import React, { useState, useRef, useContext } from 'react';
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import React, { useState, useRef, useContext, useMemo, lazy, Suspense } from 'react';
+import { GoogleMap, Marker } from '@react-google-maps/api';
 import emailjs from '@emailjs/browser';
 import { LanguageContext } from '../context/LanguageContext';
+
+// Lazy load the map component
+const MapSection = lazy(() => import('./MapSection'));
 
 const Contact = () => {
     const form = useRef();
@@ -21,10 +24,10 @@ const Contact = () => {
             process.env.REACT_APP_EMAILJS_PUBLIC_KEY
         )
         .then((result) => {
-            setSubmitStatus('Message sent successfully!');
+            setSubmitStatus(translations.contact.form.submitStatus.success);
             form.current.reset();
         }, (error) => {
-            setSubmitStatus('Failed to send message. Please try again.');
+            setSubmitStatus(translations.contact.form.submitStatus.error);
             console.error(error);
         })
         .finally(() => {
@@ -32,17 +35,18 @@ const Contact = () => {
         });
     };
 
-    // Canmore coordinates
-    const center = {
+    // Memoize static values
+    const center = useMemo(() => ({
         lat: 51.0884,
         lng: -115.3479
-    };
+    }), []);
 
-    const mapStyles = {
+    const mapStyles = useMemo(() => ({
         height: "100%",
         width: "100%"
-    };
-    const mapOptions = {
+    }), []);
+
+    const mapOptions = useMemo(() => ({
         styles: [
             {
                 stylers: [
@@ -58,7 +62,7 @@ const Contact = () => {
         streetViewControl: false,
         rotateControl: false,
         fullscreenControl: false
-    };
+    }), []);
 
     return (
         <section id="contact" className="section contact">
@@ -119,16 +123,13 @@ const Contact = () => {
                     </div>
                 </div>
                 <div className="contactMap">
-                    <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
-                        <GoogleMap
-                            mapContainerStyle={mapStyles}
-                            zoom={10}
+                    <Suspense fallback={<div>Loading map...</div>}>
+                        <MapSection 
                             center={center}
-                            options={mapOptions}
-                        >
-                            <Marker position={center} />
-                        </GoogleMap>
-                    </LoadScript>
+                            mapStyles={mapStyles}
+                            mapOptions={mapOptions}
+                        />
+                    </Suspense>
                 </div>
             </div>
         </section>

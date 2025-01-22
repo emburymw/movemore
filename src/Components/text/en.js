@@ -84,7 +84,11 @@ export const en = {
       submitButton: "Send Message",
       submitting: "Sending...",
       successMessage: "Message sent successfully!",
-      errorMessage: "Failed to send message. Please try again."
+      errorMessage: "Failed to send message. Please try again.",
+      submitStatus: {
+        success: "Message sent successfully!",
+        error: "Failed to send message. Please try again."
+      }
     }
   },
   navbar: {

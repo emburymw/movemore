@@ -6,6 +6,7 @@ import Footer from './Components/Footer';
 import { init } from '@emailjs/browser';
 import ReactGA from 'react-ga';
 import { LanguageProvider } from './context/LanguageContext';
+import { LoadScript } from '@react-google-maps/api';
 
 init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
 
@@ -24,17 +25,19 @@ const App = () => {
 
   return (
     <LanguageProvider>
-      <div>
-        <Navbar />
-        <Home />
-        <Suspense fallback={<div>Loading...</div>}>
-          <About />
-          <Services />
-          <Fees />
-          <Contact />
-        </Suspense>
-        <Footer />
-      </div>
+      <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
+        <div>
+          <Navbar />
+          <Home />
+          <Suspense fallback={<div>Loading...</div>}>
+            <About />
+            <Services />
+            <Fees />
+            <Contact />
+          </Suspense>
+          <Footer />
+        </div>
+      </LoadScript>
     </LanguageProvider>
   );
 };

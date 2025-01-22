@@ -68,7 +68,7 @@ export const fr = {
       ]
     },
     contact: {
-      title: "Nous joindre",
+      title: "Me joindre",
       location: "Les services sont offerts à Canmore et dans les régions avoisinantes.",
       labels: {
         phone: "Téléphone",
@@ -84,7 +84,11 @@ export const fr = {
         submitButton: "Envoyez",
         submitting: "Envoi en cours...",
         successMessage: "Message envoyé avec succès!",
-        errorMessage: "Échec de l'envoi. Veuillez réessayer."
+        errorMessage: "Échec de l'envoi. Veuillez réessayer.",
+        submitStatus: {
+          success: "Message envoyé avec succès !",
+          error: "Échec de l'envoi du message. Veuillez réessayer."
+        }
       }
     },
     navbar: {

@@ -1,3 +1,14 @@
+:root {
+  color-scheme: light;
+  -webkit-color-scheme: light;
+}
+
+img, .home {
+  /* Force sRGB color space */
+  color-scheme: only light;
+  -webkit-color-scheme: only light;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -831,7 +842,7 @@ img {
   display: flex;
   align-items: center;
   gap: 20px;
-  margin-right: -10px;
+  margin-right: -20px;
 }
 
 .language-toggle {
