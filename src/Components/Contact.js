@@ -1,9 +1,7 @@
 import React, { useState, useRef, useContext, useMemo, lazy, Suspense } from 'react';
-import { GoogleMap, Marker } from '@react-google-maps/api';
 import emailjs from '@emailjs/browser';
 import { LanguageContext } from '../context/LanguageContext';
 
-// Lazy load the map component
 const MapSection = lazy(() => import('./MapSection'));
 
 const Contact = () => {
