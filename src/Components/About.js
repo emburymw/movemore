@@ -1,5 +1,5 @@
 import React, { useContext, lazy } from 'react';
-import natasha from "../images/NatPortrait.jpg";
+import natasha from "../images/Nat.jpg";
 import { LanguageContext } from '../context/LanguageContext';
 
 // Lazy load images
@@ -10,6 +10,8 @@ const About = () => {
     
     return (
         <section id="about" className="section about">
+            <meta name="description" content={translations.about.title} />
+            <meta name="keywords" content="physiotherapy, Canmore, about Natasha, home physio, Bow Valley, Banff" />
             <div className="aboutContainer">
                 <OptimizedImage 
                     src={natasha} 

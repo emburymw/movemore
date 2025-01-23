@@ -66,6 +66,8 @@ const Contact = () => {
 
     return (
         <section id="contact" className="section contact">
+            <meta name="description" content="Contact Movemore Canmore Physiotherapy for personalized home physiotherapy services." />
+            <meta name="keywords" content="contact, physiotherapy, Canmore, home physio, Bow Valley, Banff" />
             <h1><b>{translations.contact.title}</b></h1>
             <div className="contactContainer">
                 <div className="contactLeftSide">

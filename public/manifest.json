@@ -1,6 +1,8 @@
 {
   "short_name": "MovemorePhysio",
   "name": "Movemore Canmore Physiotherapy",
+  "description": "Professional physiotherapy services in Canmore, offering personalized treatment plans and virtual consultations.",
+  "keywords": "physiotherapy, Canmore, health, wellness, rehabilitation, virtual physiotherapy, home physio, Bow Valley, Banff",
   "icons": [
     {
       "src": "fireweed.ico",
@@ -20,7 +22,6 @@
   "background_color": "#ffffff",
   "orientation": "portrait",
   "scope": "/",
-  "description": "Professional physiotherapy services in Canmore",
   "categories": ["health", "medical"],
   "screenshots": [
     {
