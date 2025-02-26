@@ -77,7 +77,7 @@ export const en = {
     phone: "(403) 953-0322",
     email: "natasha@movemorecanmore.ca",
     form: {
-      namePlaceholder: "Your Name",
+      namePlaceholder: "Your Full Name",
       emailPlaceholder: "Your Email",
       phonePlaceholder: "Your Phone (optional)",
       messagePlaceholder: "Your Message",
