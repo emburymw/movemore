@@ -74,8 +74,8 @@ export const fr = {
         phone: "Téléphone",
         email: "Courriel"
       },
-      phone: "(780) 265-2536",
-      email: "info@movemorecanmore.ca",
+      phone: "(403) 953-0322",
+      email: "natasha@movemorecanmore.ca",
       form: {
         namePlaceholder: "Votre nom",
         emailPlaceholder: "Votre courriel",
