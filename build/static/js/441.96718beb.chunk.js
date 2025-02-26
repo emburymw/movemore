@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmovemore_app=self.webpackChunkmovemore_app||[]).push([[441],{441:(e,o,p)=>{p.r(o),p.d(o,{default:()=>a});var t=p(950),n=p(523),s=p(414);const r=e=>{let{center:o,mapStyles:p,mapOptions:t}=e;return(0,s.jsx)(n.u6,{mapContainerStyle:p,zoom:10,center:o,options:t,children:(0,s.jsx)(n.pH,{position:o})})},a=t.memo(r)}}]);
