@@ -1,5 +1,5 @@
 import React, { useContext, lazy } from 'react';
-import natasha from "../images/Nat.jpg";
+import natasha from "../images/Nat.webp";
 import { LanguageContext } from '../context/LanguageContext';
 
 // Lazy load images
