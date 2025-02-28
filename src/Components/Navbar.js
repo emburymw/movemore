@@ -32,7 +32,7 @@ const Navbar = () => {
       <nav>
         <div className="logo">
           <Link to="home" smooth={true} duration={500} offset={-80}>
-            <img src={logo} alt="Mobile Physio Clinic Logo" />
+            <img src={logo} alt="Move More Canmore Logo" />
           </Link>
         </div>
         <div className="nav-controls">
