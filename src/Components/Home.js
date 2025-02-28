@@ -24,6 +24,8 @@ const Home = () => {
       className={`section home ${bgLoaded ? 'bg-loaded' : ''}`}
       style={bgLoaded ? {} : { backgroundImage: 'none' }}
     >
+      <h1 className="hidden-heading">Expert Physiotherapy in Canmore – Mobile & Virtual Care</h1>
+      <h2 className="hidden-heading">Personalized Treatment Plans for Recovery and Pain Relief</h2>
       <div className="home-content">
         <OptimizedImage 
           src={flowersBiege} 

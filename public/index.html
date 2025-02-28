@@ -10,7 +10,7 @@
       name="description"
       content="Professional mobile physiotherapy services in Canmore, offering personalized treatment plans and virtual consultations."
     />
-    <meta name="keywords" content="physiotherapy, Canmore, Banff, health, wellness, rehabilitation, virtual physiotherapy, injury, home physio" />
+    <meta name="keywords" content="Expert mobile physiotherapy in Canmore — personalized treatment plans, in-home care, and virtual consultations to help you move better and recover faster." />
     <meta name="author" content="Natasha Eddie Move More Canmore" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/fire-weed.png" />
     <!--
@@ -29,8 +29,13 @@
     -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preload" as="image" href="%PUBLIC_URL%/fire-weed.png" />
-    <title>Move More Canmore - Physiotherapy Services</title>
+    <title>Move More Canmore - Physiotherapy in Canmore</title>
     <meta name="color-scheme" content="light">
+    <meta property="og:title" content="Move More Canmore - Physiotherapy in Canmore" />
+    <meta property="og:description" content="Expert mobile physiotherapy in Canmore — personalized treatment plans, in-home care, and virtual consultations to help you move better and recover faster."/>
+    <meta property="og:image" content="%PUBLIC_URL%/fire-weed.png" />
+    <meta property="og:url" content="https://movemorecanmore.ca" />
+    <meta property="og:type" content="website" />
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -51,15 +56,32 @@
       "@type": "Organization",
       "name": "Movemore Canmore Physiotherapy",
       "url": "https://www.movemorecanmore.ca",
-      "logo": "https://www.movemorecanmore.ca/fire-weed.png",
-      "sameAs": [
-        "https://www.facebook.com/yourprofile",
-        "https://www.instagram.com/yourprofile"
-      ],
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.movemorecanmore.ca/fire-weed.png",
+        "width": "512",
+        "height": "512"
+      },
+      "image": "https://www.movemorecanmore.ca/fire-weed.png",
+      "description": "Expert mobile physiotherapy in Canmore — personalized treatment plans, in-home care, and virtual consultations to help you move better and recover faster.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Canmore",
+        "addressRegion": "Alberta",
+        "addressCountry": "CA"
+      },
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+1-780-265-2536",
-        "contactType": "Customer Service"
+        "telephone": "+1-403-953-0322",
+        "contactType": "customer service",
+        "availableLanguage": ["English", "French"]
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Natasha Eddie",
+        "image": "https://www.movemorecanmore.ca/Nat.jpg",
+        "jobTitle": "Physiotherapist",
+        ]
       }
     }
     </script>
