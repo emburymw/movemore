@@ -1,7 +1,11 @@
-import React, { useEffect, Suspense, lazy } from 'react';
+import React, { useEffect } from 'react';
 import "./App.css";
 import Navbar from './Components/Navbar';
 import Home from './Components/Home';
+import About from './Components/About';
+import Services from './Components/Services';
+import Fees from './Components/Fees';
+import Contact from './Components/Contact';
 import Footer from './Components/Footer';
 import { init } from '@emailjs/browser';
 import ReactGA from 'react-ga';
@@ -10,14 +14,7 @@ import { LoadScript } from '@react-google-maps/api';
 
 init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
 
-// Lazy load components
-const About = lazy(() => import('./Components/About'));
-const Services = lazy(() => import('./Components/Services'));
-const Fees = lazy(() => import('./Components/Fees'));
-const Contact = lazy(() => import('./Components/Contact'));
-
 const App = () => {
-
   useEffect(() => {
     ReactGA.initialize('TBD_TRACKING_ID');
     ReactGA.pageview(window.location.pathname + window.location.search);
@@ -29,12 +26,10 @@ const App = () => {
         <div>
           <Navbar />
           <Home />
-          <Suspense fallback={<div>Loading...</div>}>
-            <About />
-            <Services />
-            <Fees />
-            <Contact />
-          </Suspense>
+          <About />
+          <Services />
+          <Fees />
+          <Contact />
           <Footer />
         </div>
       </LoadScript>
