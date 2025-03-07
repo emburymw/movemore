@@ -32,7 +32,15 @@ const Navbar = () => {
       <nav>
         <div className="logo">
           <Link to="home" smooth={true} duration={500} offset={-80}>
-            <img src={logo} alt="Move More Canmore Logo" />
+            <img 
+              src="/fire-weed.png" 
+              alt="Move More Canmore Logo" 
+              width="90"
+              height="90"
+              loading="eager"
+              decoding="sync"
+              fetchpriority="high"
+            />
           </Link>
         </div>
         <div className="nav-controls">

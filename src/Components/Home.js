@@ -43,9 +43,14 @@ const Home = () => {
         <br />
         <p>{translations.home.motto}</p>
         <br />
-        <Link to="contact" smooth={true} duration={500}>
+        <a 
+          href="https://movemorecanmore.janeapp.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="book-now-link"
+        >
           {translations.home.bookNow}
-        </Link>
+        </a>
       </div>
     </section>
   );

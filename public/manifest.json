@@ -11,9 +11,8 @@
     },
     {
       "src": "fire-weed.png",
-      "type": "image/png",
-      "sizes": "192x192",
-      "purpose": "any maskable"
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ],
   "start_url": ".",
