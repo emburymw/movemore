@@ -1,5 +1,4 @@
 import React, { useContext, lazy, useEffect, useState, Suspense } from 'react';
-import { Link } from "react-scroll";
 import flowersBiege from '../images/logoBiege.png';
 import { LanguageContext } from '../context/LanguageContext';
 

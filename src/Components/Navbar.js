@@ -1,6 +1,5 @@
 import React, { useState, useRef, useContext } from 'react';
 import { Link } from "react-scroll";
-import logo from "../images/fire-weed.png";
 import dropdown from "../images/dropdown.png";
 import { LanguageContext } from '../context/LanguageContext';
 
