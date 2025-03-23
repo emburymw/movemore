@@ -6,33 +6,33 @@
 
     <url>
         <loc>https://movemorecanmore.ca/</loc>
-        <lastmod>2025-02-26</lastmod>
+        <lastmod>2024-03-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://movemorecanmore.ca/about</loc>
-        <lastmod>2025-02-26</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://movemorecanmore.ca/services</loc>
-        <lastmod>2025-02-26</lastmod>
+        <loc>https://movemorecanmore.ca/#about</loc>
+        <lastmod>2024-03-20</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
+        <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://movemorecanmore.ca/fees</loc>
-        <lastmod>2025-02-26</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.6</priority>
+        <loc>https://movemorecanmore.ca/#services</loc>
+        <lastmod>2024-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://movemorecanmore.ca/contact</loc>
-        <lastmod>2025-02-26</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.5</priority>
+        <loc>https://movemorecanmore.ca/#fees</loc>
+        <lastmod>2024-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://movemorecanmore.ca/#contact</loc>
+        <lastmod>2024-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
 
 </urlset>

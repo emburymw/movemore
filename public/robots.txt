@@ -1,5 +1,12 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow: /private/
 Allow: /
-Sitemap: https://www.movemorecanmore.ca/sitemap.xml
+Sitemap: https://movemorecanmore.ca/sitemap.xml
+
+# Block access to specific files and directories
+Disallow: /private/
+Disallow: /temp/
+Disallow: /admin/
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*?*
