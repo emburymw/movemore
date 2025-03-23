@@ -52,8 +52,23 @@
     <meta property="og:type" content="website" />
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <noscript>
+      <div style="text-align: center; padding: 20px; font-family: Arial, sans-serif;">
+        <h1>JavaScript Required</h1>
+        <p>Please enable JavaScript to view the Move More Canmore website. We use JavaScript to provide the best possible experience.</p>
+      </div>
+    </noscript>
+    <div id="root">
+      <div style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #ffffff;">
+        <div style="width: 40px; height: 40px; border: 3px solid #f3f3f3; border-top: 3px solid #a2bba7; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+        <style>
+          @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
+        </style>
+      </div>
+    </div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

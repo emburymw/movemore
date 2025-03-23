@@ -1,6 +1,7 @@
 import React, { useContext, lazy, useEffect, useState, Suspense } from 'react';
 import flowersBiege from '../images/logoBiege.png';
 import { LanguageContext } from '../context/LanguageContext';
+import LoadingSpinner from './LoadingSpinner';
 
 // Lazy load images
 const OptimizedImage = lazy(() => import('./OptimizedImage'));
@@ -27,7 +28,7 @@ const Home = () => {
       <h1 className="hidden-heading">Expert Physiotherapy in Canmore – Mobile & Virtual Care</h1>
       <h2 className="hidden-heading">Personalized Treatment Plans for Recovery and Pain Relief</h2>
       <div className="home-content">
-        <Suspense fallback={<div style={{height: "450px"}}></div>}>
+        <Suspense fallback={<LoadingSpinner />}>
           <OptimizedImage 
             src={flowersBiege} 
             alt="Movemore Canmore Physiotherapy" 

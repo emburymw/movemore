@@ -1,6 +1,7 @@
 import React, { useState, useRef, useContext, useMemo, lazy, Suspense } from 'react';
 import emailjs from '@emailjs/browser';
 import { LanguageContext } from '../context/LanguageContext';
+import LoadingSpinner from './LoadingSpinner';
 
 const MapSection = lazy(() => import('./MapSection'));
 
@@ -123,7 +124,7 @@ const Contact = () => {
                     </div>
                 </div>
                 <div className="contactMap">
-                    <Suspense fallback={<div>Loading map...</div>}>
+                    <Suspense fallback={<LoadingSpinner />}>
                         <MapSection 
                             center={center}
                             mapStyles={mapStyles}

@@ -11,6 +11,7 @@ import { init } from '@emailjs/browser';
 import ReactGA from 'react-ga';
 import { LanguageProvider } from './context/LanguageContext';
 import { LoadScript } from '@react-google-maps/api';
+import LoadingSpinner from './Components/LoadingSpinner';
 
 init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
 
@@ -22,7 +23,10 @@ const App = () => {
 
   return (
     <LanguageProvider>
-      <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
+      <LoadScript 
+        googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
+        loadingElement={<LoadingSpinner />}
+      >
         <div>
           <Navbar />
           <Home />
