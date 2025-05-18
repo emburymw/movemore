@@ -275,17 +275,17 @@ img {
   display: inline-block;
   font-size: x-large;
   padding: 12px 30px;
-  border: 2px solid #ffffff;
+  border: 1px solid #ffffff;
   border-radius: 4px;
   color: #ffffff;
   text-decoration: none;
   transition: all 0.3s ease;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(162, 187, 167, 0.6);
   margin-top: 20px;
 }
 
 .home-content a:hover {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(101, 137, 113, 0.6);
   text-decoration: none;
   transform: translateY(-2px);
 }
@@ -612,6 +612,32 @@ img {
   margin: 0 auto;
 }
 
+.contactBookButton {
+  width: 100%;
+  text-align: center;
+  margin: 10px 0 0 0;
+}
+
+.contactBookButton .book-now-link {
+  cursor: pointer;
+  display: inline-block;
+  font-size: x-large;
+  padding: 12px 30px;
+  border: 2px solid #658971;
+  border-radius: 4px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background-color: #658971;
+}
+
+.contactBookButton .book-now-link:hover {
+  background-color: #8aab8c;
+  border-color: #8aab8c;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
 @media (max-width: 768px) {
   .contactContainer {
     flex-direction: column;
@@ -648,33 +674,34 @@ img {
 
 .contactInfo {
   flex: 0 1 auto;
-  text-align: left;
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   min-height: unset;
-  padding-top: 20px;
+  padding-top: 10px;
+  margin: 0 auto;
+  max-width: 500px;
+  width: 100%;
 }
 
 .contactInfo p {
   white-space: normal;
   width: 100%;
-  margin: 10px 0;
+  margin: 5px 0;
   overflow-wrap: break-word;
-  max-width: 800px;
+  max-width: 500px;
+  text-align: center;
 }
 
-@media (max-width: 768px) {
-  .contactInfo {
-    white-space: normal;
-    width: 100%;
-  }
-  
-  .contactInfo p {
-    white-space: normal;
-    width: 100%;
-    overflow-wrap: break-word;
-  }
+.contactLeftSide {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+  width: 100%;
+  max-width: 500px;
+  align-items: center;
 }
 
 .contactForm {
@@ -709,16 +736,6 @@ img {
   outline: none;
   border-color: #9bbc9d; 
   box-shadow: 0 0 5px rgba(155, 188, 157, 0.3);
-}
-
-.contactLeftSide {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  flex: 1;
-  width: 100%;
-  max-width: 500px; 
-  white-space: nowrap;
 }
 
 .submitButton {

@@ -22,16 +22,16 @@ const Contact = () => {
             form.current,
             process.env.REACT_APP_EMAILJS_PUBLIC_KEY
         )
-        .then((result) => {
-            setSubmitStatus(translations.contact.form.submitStatus.success);
-            form.current.reset();
-        }, (error) => {
-            setSubmitStatus(translations.contact.form.submitStatus.error);
-            console.error(error);
-        })
-        .finally(() => {
-            setIsSubmitting(false);
-        });
+            .then((result) => {
+                setSubmitStatus(translations.contact.form.submitStatus.success);
+                form.current.reset();
+            }, (error) => {
+                setSubmitStatus(translations.contact.form.submitStatus.error);
+                console.error(error);
+            })
+            .finally(() => {
+                setIsSubmitting(false);
+            });
     };
 
     // Memoize static values
@@ -66,11 +66,22 @@ const Contact = () => {
     return (
         <section id="contact" className="section contact">
             <meta name="description" content="Contact Movemore Canmore Physiotherapy for personalized home physiotherapy services." />
-            <meta name="keywords" content="contact, physiotherapy, Canmore, home physio, Bow Valley, Banff" />
+            <meta name="keywords" content="contact, physiotherapy, Canmore, home physiotherapy, physio, Bow Valley, Banff" />
             <h1>{translations.contact.title}</h1>
             <div className="contactContainer">
                 <div className="contactLeftSide">
+                    <div className="contactBookButton">
+                        <a
+                         href="https://movemorecanmore.janeapp.com/"
+                         target="_blank"
+                         rel="noopener noreferrer"
+                         className="book-now-link"
+                        >
+                         {translations.contact.bookOnline}
+                        </a>
+                    </div>
                     <div className="contactInfo">
+                        <p>{translations.contact.availability}</p>
                         <p>{translations.contact.location}</p>
                         <p><b>{translations.contact.labels.phone}:</b> {translations.contact.phone}</p>
                         <p><b>{translations.contact.labels.email}:</b> {translations.contact.email}</p>
@@ -78,33 +89,33 @@ const Contact = () => {
                     <div className="contactForm">
                         <form ref={form} onSubmit={sendEmail}>
                             <div className="formGroup">
-                                <input 
-                                    type="text" 
+                                <input
+                                    type="text"
                                     name="user_name"
                                     placeholder={translations.contact.form.namePlaceholder}
-                                    required 
+                                    required
                                 />
                             </div>
                             <div className="formGroup">
-                                <input 
-                                    type="email" 
+                                <input
+                                    type="email"
                                     name="user_email"
                                     placeholder={translations.contact.form.emailPlaceholder}
-                                    required 
+                                    required
                                 />
                             </div>
                             <div className="formGroup">
-                                <input 
-                                    type="tel" 
+                                <input
+                                    type="tel"
                                     name="user_phone"
                                     placeholder={translations.contact.form.phonePlaceholder}
                                 />
                             </div>
                             <div className="formGroup">
-                                <textarea 
+                                <textarea
                                     name="message"
                                     placeholder={translations.contact.form.messagePlaceholder}
-                                    rows="5" 
+                                    rows="5"
                                     required
                                 ></textarea>
                             </div>
@@ -113,8 +124,8 @@ const Contact = () => {
                                     {submitStatus}
                                 </div>
                             )}
-                            <button 
-                                type="submit" 
+                            <button
+                                type="submit"
                                 className="submitButton"
                                 disabled={isSubmitting}
                             >
@@ -125,7 +136,7 @@ const Contact = () => {
                 </div>
                 <div className="contactMap">
                     <Suspense fallback={<LoadingSpinner />}>
-                        <MapSection 
+                        <MapSection
                             center={center}
                             mapStyles={mapStyles}
                             mapOptions={mapOptions}

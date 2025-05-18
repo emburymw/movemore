@@ -7,7 +7,7 @@ export const en = {
   about: {
     title: "Hello! I'm Natasha",
     paragraph1: "I'm a physiotherapist based in Canmore, and am passionate about helping individuals reach their goals and enjoy an active lifestyle. I completed my undergraduate studies in Alberta and earned my Master's in Physiotherapy from the University of Ottawa. I have been practicing since 2017.",
-    paragraph2: "In my free time, you'll often find me trail running, skiing, or rock climbing in the beautiful mountains surrounding Canmore. I truly enjoy the active lifestyle this incredible area offers, and I believe in promoting the same enthusiasm for movement and health in my clients.",
+    paragraph2: "In my free time, you'll often find me walking my dog Kya,  trail running, skiing, or rock climbing in the beautiful mountains surrounding Canmore. I truly enjoy the active lifestyle this incredible area offers, and I believe in promoting the same enthusiasm for movement and health in my clients.",
     paragraph3: "I offer services in both French and English and look forward to working with you!"
   },
   services: {
@@ -69,6 +69,8 @@ export const en = {
   },
   contact: {
     title: "Contact Me",
+    bookOnline: "Book Online",
+    availability: "Please contact me for additional availability.",
     location: "Services are provided in Canmore and surrounding areas.",
     labels: {
       phone: "Phone",

@@ -5,7 +5,7 @@ const MapSection = ({ center, mapStyles, mapOptions }) => {
     return (
         <GoogleMap
             mapContainerStyle={mapStyles}
-            zoom={10}
+            zoom={11}
             center={center}
             options={mapOptions}
         >
