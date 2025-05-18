@@ -7,7 +7,7 @@ export const fr = {
     about: {
       title: "Bonjour! Je m'appelle Natasha",
       paragraph1: "Je suis une physiothérapeute, résidente de Canmore et je suis passionnée par l'idée d'aider les gens à atteindre leurs objectifs et à profiter d'un mode de vie actif. J'ai fait mes études universitaires de premier cycle en Alberta et j'ai obtenu ma maîtrise en physiothérapie de l'Université d'Ottawa. Je suis physiothérapeute depuis 2017.",
-      paragraph2: "Pendant mes temps libres, vous me trouverez souvent en train de marcher mon chien Kya, faire de la course sur sentier, du ski alpin ou de l'escalade dans les montagnes entourant Canmore. J'apprécie énormément le mode de vie actif qu'offre cette région, et je crois qu'il faut promouvoir le même enthousiasme pour le mouvement et la santé auprès de mes clients.",
+      paragraph2: "Pendant mes temps libres, vous me trouverez souvent en train de promener mon chien Kya, faire de la course sur sentier, du ski alpin ou de l'escalade dans les montagnes entourant Canmore. J'apprécie énormément le mode de vie actif qu'offre cette région, et je crois qu'il faut promouvoir le même enthousiasme pour le mouvement et la santé auprès de mes clients.",
       paragraph3: "J'offre des services en français et en anglais et j'ai hâte de travailler avec vous!"
     },
     services: {
