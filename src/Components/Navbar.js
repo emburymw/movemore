@@ -2,6 +2,7 @@ import React, { useState, useRef, useContext } from 'react';
 import { Link } from "react-scroll";
 import dropdown from "../images/dropdown.png";
 import { LanguageContext } from '../context/LanguageContext';
+import { trackLanguageChange } from '../utils/analytics';
 
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -21,7 +22,9 @@ const Navbar = () => {
   };
 
   const toggleLanguage = () => {
-    setLanguage(language === 'en' ? 'fr' : 'en');
+    const newLanguage = language === 'en' ? 'fr' : 'en';
+    setLanguage(newLanguage);
+    trackLanguageChange(newLanguage);
   };
 
   const buttonText = language === 'en' ? 'FR' : 'EN';

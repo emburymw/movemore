@@ -2,6 +2,7 @@ import React, { useState, useRef, useContext, useMemo, lazy, Suspense } from 're
 import emailjs from '@emailjs/browser';
 import { LanguageContext } from '../context/LanguageContext';
 import LoadingSpinner from './LoadingSpinner';
+import { trackContactForm, trackButtonClick } from '../utils/analytics';
 
 const MapSection = lazy(() => import('./MapSection'));
 
@@ -15,6 +16,8 @@ const Contact = () => {
         e.preventDefault();
         setIsSubmitting(true);
         setSubmitStatus('');
+
+        trackContactForm();
 
         emailjs.sendForm(
             process.env.REACT_APP_EMAILJS_SERVICE_ID,
@@ -76,6 +79,7 @@ const Contact = () => {
                          target="_blank"
                          rel="noopener noreferrer"
                          className="book-now-link"
+                         onClick={() => trackButtonClick('Book Online', 'Contact Section')}
                         >
                          {translations.contact.bookOnline}
                         </a>
