@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmovemore_app=self.webpackChunkmovemore_app||[]).push([[958],{958:(e,a,s)=>{s.r(a),s.d(a,{default:()=>c});s(950);var t=s(414);const c=e=>{let{src:a,alt:s,className:c,width:l,height:h}=e;return(0,t.jsx)("img",{src:a,alt:s,className:c,width:l,height:h,loading:"lazy",decoding:"async"})}}}]);

@@ -1,6 +1,5 @@
 import ReactGA from 'react-ga';
 
-// Initialize Google Analytics
 export const initializeGA = (trackingId) => {
   if (trackingId) {
     ReactGA.initialize(trackingId);
