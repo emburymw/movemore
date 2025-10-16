@@ -5,15 +5,14 @@
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@react-google-maps/api": "^2.20.3",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
+    "@testing-library/jest-dom": "^6.1.0",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.5.0",
     "nth-check": "^2.1.1",
-    "postcss": "^8.5.3",
+    "postcss": "^8.4.31",
     "postcss-loader": "^8.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-ga": "^3.3.1",
     "react-ga4": "^2.1.0",
     "react-router-dom": "^6.16.0",
     "react-scripts": "5.0.1",
@@ -47,6 +46,13 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.3"
+  },
+  "overrides": {
+    "nth-check": "^2.1.1",
+    "css-select": "^5.2.0",
+    "svgo": "^3.3.2",
+    "postcss": "^8.4.31",
+    "webpack-dev-server": ">=5.2.1"
   },
   "homepage": "https://movemorecanmore.ca"
 }
