@@ -17,8 +17,7 @@ init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
 
 const App = () => {
   useEffect(() => {
-    const GA_TRACKING_ID = process.env.REACT_APP_GA_TRACKING_ID || 'G-8BCZQ5QYB0';
-    initializeGA(GA_TRACKING_ID);
+    initializeGA();
     trackPageView(window.location.pathname + window.location.search);
 
     // Track scroll depth

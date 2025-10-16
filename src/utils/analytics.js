@@ -1,24 +1,29 @@
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 
-export const initializeGA = (trackingId) => {
+const GA_TRACKING_ID = process.env.REACT_APP_GA_TRACKING_ID || 'G-8BCZQ5QYB0';
+
+export const initializeGA = (trackingId = GA_TRACKING_ID) => {
   if (trackingId) {
     ReactGA.initialize(trackingId);
+    console.log('Google Analytics 4 initialized with ID:', trackingId);
   }
 };
 
 // Track page views
 export const trackPageView = (path) => {
-  ReactGA.pageview(path);
+  ReactGA.send({ hitType: 'pageview', page: path });
+  console.log('GA4 Page View tracked:', path);
 };
 
 // Track custom events
 export const trackEvent = (category, action, label = '', value = 0) => {
   ReactGA.event({
-    category: category,
     action: action,
+    category: category,
     label: label,
     value: value
   });
+  console.log('GA4 Event tracked:', { category, action, label, value });
 };
 
 // Track button clicks
