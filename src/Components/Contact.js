@@ -2,7 +2,7 @@ import React, { useState, useRef, useContext, useMemo, lazy, Suspense } from 're
 import emailjs from '@emailjs/browser';
 import { LanguageContext } from '../context/LanguageContext';
 import LoadingSpinner from './LoadingSpinner';
-import { trackContactForm, trackButtonClick } from '../utils/analytics';
+import { trackContactForm, trackBookNowClick } from '../utils/analytics';
 
 const MapSection = lazy(() => import('./MapSection'));
 
@@ -79,7 +79,7 @@ const Contact = () => {
                          target="_blank"
                          rel="noopener noreferrer"
                          className="book-now-link"
-                         onClick={() => trackButtonClick('Book Online', 'Contact Section')}
+                         onClick={() => trackBookNowClick('Contact Section')}
                         >
                          {translations.contact.bookOnline}
                         </a>

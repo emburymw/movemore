@@ -2,6 +2,7 @@ import React, { useContext, lazy, useEffect, useState, Suspense } from 'react';
 import flowersBiege from '../images/logoBiege.png';
 import { LanguageContext } from '../context/LanguageContext';
 import LoadingSpinner from './LoadingSpinner';
+import { trackButtonClick } from '../utils/analytics';
 
 // Lazy load images
 const OptimizedImage = lazy(() => import('./OptimizedImage'));
@@ -48,6 +49,7 @@ const Home = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="book-now-link"
+          onClick={() => trackButtonClick('Book Now', 'Home Section')}
         >
           {translations.home.bookNow}
         </a>
