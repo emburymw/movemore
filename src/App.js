@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import "./App.css";
 import Navbar from './Components/Navbar';
 import Home from './Components/Home';
@@ -16,6 +16,8 @@ import LoadingSpinner from './Components/LoadingSpinner';
 init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY);
 
 const App = () => {
+  const hasTrackedPageView = useRef(false);
+
   useEffect(() => {
     // Suppress Google Maps deprecation warnings in console
     const originalWarn = console.warn;
@@ -26,8 +28,15 @@ const App = () => {
       originalWarn.apply(console, args);
     };
 
+    // Initialize GA only once
     initializeGA();
-    trackPageView(window.location.pathname + window.location.search);
+    
+    // Track initial page view only once (prevents double-tracking in React.StrictMode)
+    if (!hasTrackedPageView.current) {
+      const currentPath = window.location.pathname + window.location.search;
+      trackPageView(currentPath);
+      hasTrackedPageView.current = true;
+    }
 
     // Track scroll depth
     let maxScroll = 0;

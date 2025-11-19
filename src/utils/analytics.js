@@ -2,17 +2,24 @@ import ReactGA from 'react-ga4';
 
 const GA_TRACKING_ID = process.env.REACT_APP_GA_TRACKING_ID || 'G-8BCZQ5QYB0';
 
+let isInitialized = false;
+
 export const initializeGA = (trackingId = GA_TRACKING_ID) => {
-  if (trackingId) {
+  if (trackingId && !isInitialized) {
     ReactGA.initialize(trackingId, {
       debug_mode: process.env.NODE_ENV === 'development'
     });
+    isInitialized = true;
     console.log('Google Analytics 4 initialized with ID:', trackingId);
   }
 };
 
-// Track page views
+// Track page views (GA4 format)
 export const trackPageView = (path) => {
+  if (!isInitialized) {
+    console.warn('GA not initialized, skipping page view');
+    return;
+  }
   ReactGA.send({ hitType: 'pageview', page: path });
   console.log('GA4 Page View tracked:', path);
 };
